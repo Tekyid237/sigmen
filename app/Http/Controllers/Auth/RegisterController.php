@@ -56,8 +56,9 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'gender' => ['required','string', 'max:1'],
             'birth-date' => ['required','date_format:m/d/Y'],
-            'branch' => ['required', 'string', 'max:255'],
+            'branch' => ['required', 'string', 'max:1000'],
             'level' => ['required','string', 'max:1'],
+            'sup-infos' => ['max:10000'],
         ]);
     }
 
