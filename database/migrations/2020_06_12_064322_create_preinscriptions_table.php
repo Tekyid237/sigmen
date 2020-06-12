@@ -22,6 +22,7 @@ class CreatePreinscriptionsTable extends Migration
             $table->string('branch');
             $table->string('level');
             $table->text('sup-infos')->nullable();
+            $table->is_validate('is_validate')->default(false);
             $table->timestamps();
         });
     }

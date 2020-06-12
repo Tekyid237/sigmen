@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <h1>Se Préinscrire</h1>
             <hr>
-            <form method="POST" action=" ">
+            <form method="POST" action="{{ route('preinscription') }}">
                 @csrf
 
                 <div class="form-group">
