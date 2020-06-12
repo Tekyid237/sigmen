@@ -15,14 +15,14 @@ class CreatePreinscriptionsTable extends Migration
     {
         Schema::create('preinscriptions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('lastname');
+            $table->string('last_name');
+            $table->string('first_name');
             $table->char('gender', 1);
-            $table->date('birth-date');
+            $table->date('birth_date');
             $table->string('branch');
             $table->string('level');
-            $table->text('sup-infos')->nullable();
-            $table->is_validate('is_validate')->default(false);
+            $table->text('sup_infos')->nullable();
+            $table->boolean('is_validate')->default(false);
             $table->timestamps();
         });
     }

@@ -24,13 +24,13 @@ class PreinscriptionStore extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'lastname' => 'required',
+            'last_name' => 'required',
+            'first_name' => 'required',
             'gender' => 'required',
-            'birth-date' => 'required|date',
+            'birth_date' => 'required|date',
             'branch' => 'required',
             'level' => 'required',
-            'sup-infos' => 'nullable|string',
+            'sup_infos' => 'nullable|string',
         ];
     }
 }

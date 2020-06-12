@@ -6,25 +6,25 @@
         <div class="col-md-8">
             <h1>Se Préinscrire</h1>
             <hr>
-            <form method="POST" action="{{ route('preinscription') }}">
+            <form method="POST" action=" ">
                 @csrf
 
                 <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="title" value="{{ old('name') }}" required autofocus>
-                    @if ($errors->has('name'))
+                    <label for="last_name">Nom</label>
+                    <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
+                    @if ($errors->has('last_name'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('last_name') }}</strong>
                     </span>
                     @endif
                 </div>
 
                 <div class="form-group">
-                    <label for="lastname">Prénom</label>
-                    <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="title" value="{{ old('lastname') }}" required autofocus>
-                    @if ($errors->has('lastname'))
+                    <label for="first_name">Prénom</label>
+                    <input id="first_name" type="text" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                    @if ($errors->has('first_name'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('lastname') }}</strong>
+                        <strong>{{ $errors->first('first_name') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -47,11 +47,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="birth-date">Date de naissance</label>
-                    <input id="birth-date" type="date" class="form-control{{ $errors->has('birth-date') ? ' is-invalid' : '' }}" name="birth-date" value="{{ old('birth-date') }}" required>
-                    @if ($errors->has('birth-date'))
+                    <label for="birth_date">Date de naissance</label>
+                    <input id="birth_date" type="date" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}" required>
+                    @if ($errors->has('birth_date'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('birth-date') }}</strong>
+                        <strong>{{ $errors->first('birth_date') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -93,11 +93,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="sup-infos">Informations supplémentaires (Facultatif)</label>
-                    <textarea name="sup-infos" class="form-control{{ $errors->has('sup-infos') ? ' is-invalid' : '' }}" id="sup-infos" cols="30" rows="10">{{ old('sup-infos') }}</textarea>
-                    @if ($errors->has('sup-infos'))
+                    <label for="sup_infos">Informations supplémentaires (Facultatif)</label>
+                    <textarea name="sup_infos" class="form-control{{ $errors->has('sup_infos') ? ' is-invalid' : '' }}" id="sup_infos" cols="30" rows="10">{{ old('sup_infos') }}</textarea>
+                    @if ($errors->has('sup_infos'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('sup-infos') }}</strong>
+                        <strong>{{ $errors->first('sup_infos') }}</strong>
                     </span>
                     @endif
                 </div>
