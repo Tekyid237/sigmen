@@ -25,10 +25,10 @@ A simple student admission project for a university
 ## References
 
 * Laravel Framework
-  * [https://laravel.com/](https://laravel.com/)
+[https://laravel.com/](https://laravel.com/)
 
 Credits
 =======
 
-* [https://twitter.com/Tekyid237](Idriss Tekeudo) [![Twitter Follow](https://img.shields.io/twitter/follow/bstevensondev.svg?style=social)](https://twitter.com/Tekyid237)  
+* [https://twitter.com/Tekyid237](Idriss Tekeudo)
 * Anne Notchao
