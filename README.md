@@ -30,5 +30,5 @@ A simple student admission project for a university
 Credits
 =======
 
-* [https://twitter.com/Tekyid237](Idriss Tekeudo)
+* [Idriss Tekeudo](https://twitter.com/Tekyid237)
 * Anne Notchao
