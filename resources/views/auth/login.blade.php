@@ -54,6 +54,11 @@
                         @endif
                     </div>
                 </div>
+                <div class="form-group row">
+                    <div class="col-md-8 mt-3">
+                        Pas encore inscrit ? <a class="btn-link" href="{{ route('register') }}">{{ __("Créer mon compte") }}</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

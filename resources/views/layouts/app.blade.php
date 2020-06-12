@@ -51,7 +51,7 @@
     
                             &nbsp;&nbsp;&nbsp;
                             <li class="nav-item">
-                                <a href="{{ route('register') }}" class="btn btn-primary">Préinscription</a>
+                                <a href="{{ route('preinscription') }}" class="btn btn-primary">Préinscription</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">

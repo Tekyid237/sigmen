@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/preinscription', 'PreinscriptionController@index')->name('preinscription');
 
 Auth::routes();
