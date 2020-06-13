@@ -59,15 +59,10 @@
                             <a href="{{ route('preinscription') }}" class="btn btn-primary">Préinscription</a>
                         </li>
                         @else
-                        
-                        <li class="nav-item">
-                            <a href="{{ route('preinscription') }}" class="btn btn-primary">Préinscription</a>
-                        </li>
-                        &nbsp;&nbsp;&nbsp;
 
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->username }} <span class="caret"></span>
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

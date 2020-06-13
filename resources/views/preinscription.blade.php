@@ -10,11 +10,11 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="last_name">Nom</label>
-                    <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
-                    @if ($errors->has('last_name'))
+                    <label for="name">Nom</label>
+                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                    @if ($errors->has('name'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('last_name') }}</strong>
+                        <strong>{{ $errors->first('name') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <span>Vous êtes :</span><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input{{ $errors->has('gender') ? ' is-invalid' : '' }}" type="radio" name="gender" id="gender_h" value="H" checked>
+                        <input class="form-check-input{{ $errors->has('gender') ? ' is-invalid' : '' }}" type="radio" name="gender" id="gender_h" value="H">
                         <label class="form-check-label" for="gender_h">Un homme</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -74,7 +74,7 @@
                 <div class="form-group">
                     <span>Niveau :</span><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input{{ $errors->has('level') ? ' is-invalid' : '' }}" type="radio" name="level" id="bts" value="BTS" checked>
+                        <input class="form-check-input{{ $errors->has('level') ? ' is-invalid' : '' }}" type="radio" name="level" id="bts" value="BTS">
                         <label class="form-check-label" for="bts">BTS</label>
                     </div>
                     <div class="form-check form-check-inline">
@@ -101,6 +101,40 @@
                     </span>
                     @endif
                 </div>
+
+                @guest
+                <h1>Informations de compte</h1>
+                <hr>
+                
+                <div class="form-group">
+                    <label for="email">{{ __('Addresse E-Mail') }}</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="password">{{ __('Mot de passe') }}</label>
+
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="password-confirm">{{ __('Confirmation votre mot de passe') }}</label>
+
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                </div>
+                @endguest
 
                 <button type="submit" class="btn btn-primary">{{ __('Soumettre ma préinsription') }}</button>
             </form>

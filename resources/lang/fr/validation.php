@@ -147,10 +147,10 @@ return [
 
     'attributes' => [
         'name'                  => 'nom',
-        'username'              => "nom d'utilisateur",
+        'name'              => "nom d'utilisateur",
         'email'                 => 'adresse email',
         'first_name'            => 'prénom',
-        'last_name'             => 'nom',
+        'name'             => 'nom',
         'password'              => 'mot de passe',
         'password_confirmation' => 'confirmation du mot de passe',
         'city'                  => 'ville',

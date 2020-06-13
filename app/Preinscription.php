@@ -12,7 +12,7 @@ class Preinscription extends Model
      * @var array
      */
     protected $fillable = [
-        'last_name', 'fisrt_name', 'gender', 'birth_date', 'branch', 'level', 'sup_infos',
+        'name', 'fisrt_name', 'gender', 'birth_date', 'branch', 'level', 'sup_infos',
     ];
 
     /**
@@ -23,4 +23,10 @@ class Preinscription extends Model
     protected $casts = [
         'is_validate' => 'false',
     ];
+
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

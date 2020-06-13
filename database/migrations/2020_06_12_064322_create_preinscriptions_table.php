@@ -14,8 +14,8 @@ class CreatePreinscriptionsTable extends Migration
     public function up()
     {
         Schema::create('preinscriptions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('last_name');
+            $table->increments('id');
+            $table->string('name');
             $table->string('first_name');
             $table->char('gender', 1);
             $table->date('birth_date');
@@ -23,6 +23,8 @@ class CreatePreinscriptionsTable extends Migration
             $table->string('level');
             $table->text('sup_infos')->nullable();
             $table->boolean('is_validate')->default(false);
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

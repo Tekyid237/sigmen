@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 mt-3">
-                        Pas encore inscrit ? <a class="btn-link" href="{{ route('register') }}">{{ __("Créer mon compte") }}</a>
+                        Pas encore pré-inscrit ? <a class="btn-link" href="{{ route('preinscription') }}">{{ __("Soumettre ma préinscription") }}</a>
                     </div>
                 </div>
             </form>

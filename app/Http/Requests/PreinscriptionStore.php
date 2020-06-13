@@ -24,7 +24,7 @@ class PreinscriptionStore extends FormRequest
     public function rules()
     {
         return [
-            'last_name' => 'required',
+            'name' => 'required',
             'first_name' => 'required',
             'gender' => 'required',
             'birth_date' => 'required|date',

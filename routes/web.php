@@ -19,4 +19,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/preinscription', 'PreinscriptionController@index')->name('preinscription');
 Route::post('/preinscription', 'PreinscriptionController@store');
 
-Auth::routes();
+Auth::routes(['register' => false]);
