@@ -19,4 +19,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/preinscription', 'PreinscriptionController@index')->name('preinscription');
 Route::post('/preinscription', 'PreinscriptionController@store');
 
+// Users Routes
 Auth::routes(['register' => false]);
+
+// Admins Routes
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');

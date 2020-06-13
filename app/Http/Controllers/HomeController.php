@@ -30,4 +30,15 @@ class HomeController extends Controller
         // dd($preinscription);
         return view('home')->with('preinscription', $preinscription);
     }
+
+
+     /**
+     * Show the admin dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function adminHome()
+    {
+        return view('adminHome');
+    }
 }
