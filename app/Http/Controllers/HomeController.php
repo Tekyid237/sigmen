@@ -39,6 +39,7 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('adminHome');
+        $preinscriptions = DB::table('preinscriptions')->orderByDesc('created_at')->paginate(10);
+        return view('adminHome', compact('preinscriptions'));
     }
 }

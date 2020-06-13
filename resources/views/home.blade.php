@@ -5,14 +5,16 @@
 
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show">
-                {{ session()->get('success') }}
+
+            @if (session('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('message') }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @endif
+
             <div class="card">
                 <div class="card-header">Ma préinscription</div>
                 <!-- Rien à afficher pour l'instant. -->
@@ -25,11 +27,11 @@
                     <li class="list-group-item">Genre : <span class="font-weight-bold">{{ $p->gender }}</span></li>
                     <li class="list-group-item">Filière : <span class="font-weight-bold">{{ $p->branch }}</span></li>
                     <li class="list-group-item">Niveau : <span class="font-weight-bold">{{ $p->level}}</span></li>
-                    <li class="list-group-item">Statut de la préinscription : 
-                        @if($p->birth_date === 1)    
-                            <span class="font-weight-bold text-success">Validée</span>
+                    <li class="list-group-item">Statut de la préinscription :
+                        @if($p->is_validate === 1)
+                        <span class="font-weight-bold text-success">Validée</span>
                         @else
-                            <span class="font-weight-bold text-danger">En attente de validation</span>
+                        <span class="font-weight-bold text-danger">En attente de validation</span>
                         @endif
                     </li>
 
