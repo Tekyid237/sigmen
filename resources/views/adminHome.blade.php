@@ -26,7 +26,7 @@
                             <th>Filière</th>
                             <th>Niveau</th>
                             <th>Infos suppl.</th>
-                            <th>Envoyée le :</th>
+                            <th>Envoyée</th>
                             <th>Statut</th>
                             <th></th>
                             <th></th>
@@ -66,7 +66,7 @@
                                 </button>
                                 <form id="reject-form" action="{{ route('admin.preinscription.reject') }}" method="POST" style="display: none;">
                                     @csrf
-                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="none">
+                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="display: none;">
                                 </form>
                             </td>
                             @endif

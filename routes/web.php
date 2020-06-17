@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'StaticPagesController@about')->name('about');
+Route::get('/contact', 'StaticPagesController@contact')->name('contact');
+Route::get('/contact', 'StaticPagesController@contact')->name('contact');
 Route::get('/preinscription', 'PreinscriptionController@index')->name('preinscription');
 Route::post('/preinscription', 'PreinscriptionController@store');
 
