@@ -53,21 +53,21 @@
                             @else
                             <td><span class="text-danger">En Attente</span></td>
                             <td>
-                                <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); document.getElementById('approve-form').submit();">
-                                    Approuver
-                                </button>
-                                <form id="approve-form" action="{{ route('admin.preinscription.approve') }}" method="POST" style="display: none;">
+                                <form id="approve-form" action="{{ route('admin.preinscription.approve') }}" method="POST">
                                     @csrf
-                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="none">
+                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="display: none;">
+                                    <button class="btn btn-primary btn-sm">
+                                        Approuver
+                                    </button>
                                 </form>
                             </td>
                             <td>
-                                <button class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('reject-form').submit();">
-                                    Rejeter
-                                </button>
-                                <form id="reject-form" action="{{ route('admin.preinscription.reject') }}" method="POST" style="display: none;">
+                                <form id="reject-form" action="{{ route('admin.preinscription.reject') }}" method="POST">
                                     @csrf
                                     <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="display: none;">
+                                    <button class="btn btn-danger btn-sm">
+                                        Rejeter
+                                    </button>
                                 </form>
                             </td>
                             @endif

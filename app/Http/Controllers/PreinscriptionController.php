@@ -90,7 +90,6 @@ class PreinscriptionController extends Controller
     public function approve(Request $request)
     {
         $preinscription = Preinscription::findOrFail($request->preinscription_id);
-        
         $preinscription->is_validate = 1;
         $preinscription->update();
         return back()->with('message', 'Préinscription approuvée');
