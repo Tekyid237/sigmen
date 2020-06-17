@@ -13,10 +13,10 @@
                 </button>
             </div>
             @endif
-            <div class="card overflow-auto">
+            <div class="card ">
                 <div class="card-header">Préinscriptions à approuver</div>
 
-                <div class="card-body">
+                <div class="card-body overflow-auto">
                     <table class="table">
                         <tr>
                             <th>No</th>
