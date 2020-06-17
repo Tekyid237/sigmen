@@ -103,7 +103,7 @@
                 <div class="footer-links col-6">
                     Liens utiles :&nbsp;
                     <a href="#">Informations utiles</a>&nbsp;
-                    <a href="#">Contacts</a>&nbsp;
+                    <a href="{{ route('contacts') }}">Contacts</a>&nbsp;
                 </div>
                 <div class="footer-copyright col-6 text-right">
                     Copyright &copy {{ date('Y') }} <a href="{{ url('/') }}">{{ config('app.name') }}</a>
