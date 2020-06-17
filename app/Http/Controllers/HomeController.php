@@ -28,7 +28,6 @@ class HomeController extends Controller
     {
         $userId = Auth::id();
         $preinscription = DB::table('preinscriptions')->where('preinscriptions.user_id', $userId)->get();
-        // dd($preinscription);
         return view('home')->with('preinscription', $preinscription);
         
     }
