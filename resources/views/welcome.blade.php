@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __("Bienvenue sur l'application de préinscription de Sigmen"))
 
 @section('content')
 <div class="container">
