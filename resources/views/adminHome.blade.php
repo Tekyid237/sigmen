@@ -4,20 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            @if (session('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
             <div class="card overflow-auto">
                 <div class="card-header">Préinscriptions à approuver</div>
 
                 <div class="card-body">
-
-                    @if (session('message'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('message') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    @endif
-
                     <table class="table">
                         <tr>
                             <th>No</th>
@@ -47,11 +45,31 @@
                             <td>{{ Carbon\Carbon::parse($p->created_at)->diffForHumans() }}</td>
                             @if($p->is_validate === 1)
                             <td><span class="text-success">Validée</span></td>
+                            <td colspan="2">Validée {{ Carbon\Carbon::parse($p->updated_at)->diffForHumans() }}</td>
+                            @elseif($p->is_validate === -1)
+                            <td><span class="text-danger">Rejetée</span></td>
+                            <td colspan="2">Rejetée {{ Carbon\Carbon::parse($p->updated_at)->diffForHumans() }}</td>
                             @else
                             <td><span class="text-danger">En Attente</span></td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" onclick="event.preventDefault(); document.getElementById('approve-form').submit();">
+                                    Approuver
+                                </button>
+                                <form id="approve-form" action="{{ route('admin.preinscription.approve') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="none">
+                                </form>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('reject-form').submit();">
+                                    Rejeter
+                                </button>
+                                <form id="reject-form" action="{{ route('admin.preinscription.reject') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    <input type="text" name="preinscription_id" id="preinscription_id" value="{{ $p->id }}" style="none">
+                                </form>
+                            </td>
                             @endif
-                            <td><a href="#" class="btn btn-primary btn-sm">Approuver</a></td>
-                            <td><a href="#" class="btn btn-danger btn-sm">Rejeter</a></td>
                         </tr>
                         @empty
                         <tr>

@@ -24,3 +24,9 @@ Auth::routes(['register' => false]);
 
 // Admins Routes
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+
+Route::group(['middleware' => ['auth', 'is_admin']], function() {
+    Route::post('/preinscription/approve', 'PreinscriptionController@approve')->name('admin.preinscription.approve');
+    Route::post('/preinscription/reject', 'PreinscriptionController@reject')->name('admin.preinscription.reject');
+
+});

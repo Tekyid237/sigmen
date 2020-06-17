@@ -33,7 +33,7 @@ class PreinscriptionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest');
     }
 
     /**
@@ -43,7 +43,9 @@ class PreinscriptionController extends Controller
      */
     public function index()
     {
+        
         return view('preinscription');
+
     }
 
     /**
@@ -85,5 +87,23 @@ class PreinscriptionController extends Controller
 
         return redirect()->route('home')->with('success', 'Votre préinscription a été envoyée, vous recevrez une notification si elle est validée.');
 
+    }
+
+    public function approve(Request $request)
+    {
+        $preinscription = Preinscription::findOrFail($request->preinscription_id);
+        
+        $preinscription->is_validate = 1;
+        $preinscription->update();
+        return back()->with('message', 'Préinscription approuvée');
+    }
+
+    public function reject(Request $request)
+    {
+        $preinscription = Preinscription::findOrFail($request->preinscription_id);
+
+        $preinscription->is_validate = -1;
+        $preinscription->update();
+        return back()->with('message', 'Préinscription rejetée');
     }
 }

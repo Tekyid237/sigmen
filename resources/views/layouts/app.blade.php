@@ -35,9 +35,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link">Dashboard</a>
-                        </li>
+                        @auth
+                            @if(Auth::user()->is_admin === 1)
+                            <li class="nav-item">
+                                <a href="{{ route('admin.home') }}" class="nav-link">Dashboard</a>
+                            </li>
+                            @else
+                            <li class="nav-item">
+                                <a href="{{ route('home') }}" class="nav-link">Dashboard</a>
+                            </li>
+                            @endif
+                        @endauth
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">A Propos</a>
                         </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Response;
 
 class IsAdmin
 {
@@ -19,7 +20,7 @@ class IsAdmin
             return $next($request);
         }
    
-        return redirect('home')->with('error',"Vous n'avez pas les droits d'administrateur");
+        return new Response(view('unauthorized')->with('role', 'ADMIN'));
 
     }
 }

@@ -30,8 +30,10 @@
                     <li class="list-group-item">Statut de la préinscription :
                         @if($p->is_validate === 1)
                         <span class="font-weight-bold text-success">Validée</span>
+                        @elseif($p->is_validate === -1)
+                        <span class="font-weight-bold text-danger">Rejetée</span>
                         @else
-                        <span class="font-weight-bold text-danger">En attente de validation</span>
+                        <span class="font-weight-bold text-primary">En attente de validation</span>
                         @endif
                     </li>
 

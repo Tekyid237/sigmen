@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        
     }
 
     /**
@@ -29,6 +30,7 @@ class HomeController extends Controller
         $preinscription = DB::table('preinscriptions')->where('preinscriptions.user_id', $userId)->get();
         // dd($preinscription);
         return view('home')->with('preinscription', $preinscription);
+        
     }
 
 

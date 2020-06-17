@@ -60,9 +60,13 @@
                     <label for="branch">Filière</label>
                     <select class="form-control{{ $errors->has('branch') ? ' is-invalid' : '' }}" id="branch" name="branch" value="{{ old('branch') }}" required>
                         <option selected>Choisir votre filière...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Génie Civil (GC)">Génie Civil (GC)</option>
+                        <option value="Gestion Logistique et Transport (GLT)">Gestion Logistique et Transport (GLT)</option>
+                        <option value="Génie Informatique (GI)">Génie Informatique (GI)</option>
+                        <option value="Gestion des Systèmes d’Information (GSI)">Gestion des Systèmes d’Information (GSI)</option>
+                        <option value="Comptabilité et Gestion des Entreprises (CGE)">Comptabilité et Gestion des Entreprises (CGE)</option>
+                        <option value="Banque et Finance (BQ)">Banque et Finance (BQ)</option>
+
                     </select>
                     @if ($errors->has('branch'))
                     <span class="invalid-feedback" role="alert">

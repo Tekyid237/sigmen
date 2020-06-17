@@ -22,7 +22,7 @@ class CreatePreinscriptionsTable extends Migration
             $table->string('branch');
             $table->string('level');
             $table->text('sup_infos')->nullable();
-            $table->boolean('is_validate')->default(false);
+            $table->tinyInteger('is_validate')->default(0);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
