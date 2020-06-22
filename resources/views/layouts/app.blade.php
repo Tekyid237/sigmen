@@ -11,6 +11,9 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>
+    <script src="{{ asset('js/popper.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -19,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 </head>
 
 <body>
@@ -51,7 +55,7 @@
                             <a href="{{ route('about') }}" class="nav-link">A Propos</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Conditions d'admission</a>
+                            <a href="{{ route('ar') }}" class="nav-link">Conditions d'admission</a>
                         </li>
                     </ul>
 
@@ -91,7 +95,7 @@
             </div>
         </nav>
 
-        <main class="py-5" style="min-height: 75vh">
+        <main class="py-5" style="min-height: 75vh;">
             @yield('content')
         </main>
     </div>

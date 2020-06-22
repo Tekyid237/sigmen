@@ -13,4 +13,8 @@ class StaticPagesController extends Controller
     public function contacts(){
     	return view('contacts');
     }
+
+    public function ar(){
+    	return view('admission-requirement');
+    }
 }
